@@ -1,13 +1,10 @@
 const express = require('express')
 const router = express.Router();
 
-
-
 const users = require('../data/users.js')
-const {crearSesion, secreto} = require('../crypto/config.js')
 const {generarToken, verificarToken} = require('../middlewares/authMiddleware.js');
 
-crearSesion(router);
+
 
 router.use(express.urlencoded({ extended: true }));
 router.use(express.json());
